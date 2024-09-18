@@ -18,6 +18,6 @@ class BaseTest:
     def setup(self, request, driver):
         request.cls.driver = driver
         request.cls.data = Data()
-        request.cls.login_page = LoginPage(driver)
-        request.cls.dashboard_page = DashboardPage(driver)
-        request.cls.personal_page = PersonalPage(driver)
+        request.cls.login_page = LoginPage()
+        request.cls.dashboard_page = DashboardPage()
+        request.cls.personal_page = PersonalPage()
