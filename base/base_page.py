@@ -6,7 +6,7 @@ from allure_commons.types import AttachmentType
 
 class BasePage:
 
-    def __int__(self, driver):
+    def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 10, poll_frequency=1)
 

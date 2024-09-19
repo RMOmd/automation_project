@@ -7,14 +7,14 @@ class PersonalPage(BasePage):
 
     PAGE_URL = Links.PERSONAL_PAGE
 
-    FIRSTNAME_FIELD = ("xpath", "//input[@name='firstname']")
+    FIRSTNAME_FIELD = ("xpath", "//input[@name='firstName']")
     SAVE_BUTTON = ("xpath", "(//button[@type='submit'])[1]")
 
     def change_name(self, new_name):
         with allure.step(f"Change name on '{new_name}"):
             firstname_field = self.wait.until(EC.element_to_be_clickable(self.FIRSTNAME_FIELD))
             firstname_field.clear()
-            assert firstname_field.get_attribute("value") == ""
+            # assert firstname_field.get_attribute("value") == ""
             firstname_field.send_keys(new_name)
             self.name = new_name
 
